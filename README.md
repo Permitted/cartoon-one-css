@@ -3,8 +3,8 @@ Mini css framework traning repo.\
 
 
 TODO:\
-[__] Using SCSS\
-[__] Adding Component System\
-[__] Readme update\
-[__] Using astro\
-[__] Github pages for demonstration\
+Using SCSS\
+Adding Component System\
+Readme update\
+Using astro\
+Github pages for demonstration\
