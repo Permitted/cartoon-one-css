@@ -1,10 +1,10 @@
 # cartoon-one-css
-Mini css framework traning repo.
+Mini css framework traning repo.\
 
 
-TODO:
-[_] Using SCSS\
-[_] Adding Component System\
-[_] Readme update\
-[_] Using astro\
-[_] Github pages for demonstration\
+TODO:\
+[__] Using SCSS\
+[__] Adding Component System\
+[__] Readme update\
+[__] Using astro\
+[__] Github pages for demonstration\
