@@ -7,4 +7,4 @@ Using SCSS\
 Adding Component System\
 Readme update\
 Using astro\
-Github pages for demonstration\
+Github pages for demonstration
