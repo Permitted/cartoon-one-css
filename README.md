@@ -1,5 +1,5 @@
 # cartoon-one-css
-Mini css framework traning repo.\
+Mini css framework traning repo.
 
 
 TODO:\
