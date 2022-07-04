@@ -1,31 +1,58 @@
-:root{
-  ---one-purple-color: #D81E5B;
-  ---one-balck-color: #231F20;
-  ---one-white-color: #F4FAFF;
-  ---one-blue-color: #279AF1;
+:root {
+  ---one-purple-color: #d81e5b;
+  ---one-balck-color: #231f20;
+  ---one-white-color: #f4faff;
+  ---one-blue-color: #279af1;
+  ---one-black-2-color: #2c2c38;
+  ---one-black-3-color: #151c2c;
 
+  --font-size-300: 0.975rem;
+  --font-size-400: 1.125rem;
+  --font-size-500: 1.25rem;
+  --font-size-600: 1.75rem;
+  --font-size-700: 3rem;
+
+  --space-1: 1rem;
+  --space-1-5: 1.5rem;
+  --space-2: 2rem;
+  --space-3: 3rem;
+  --space-4: 4rem;
 }
 
-*{
+/* Box-Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* Remove default margin */
+* {
   padding: 0;
   margin: 0;
   font-family: "DM Mono", monospace;
 }
 
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #231F20;
+  background-color: var(---one-black-2-color);
   display: grid;
   place-items: center;
 }
 
-.container{
+.container {
   max-width: 1280px;
   margin: 0 auto;
 
   display: flex;
   align-items: center;
 }
-
 
 .cb {
   background-color: rgb(34, 130, 185);
@@ -45,7 +72,7 @@ body {
 }
 
 .cb2 {
-  background-color: #F4FAFF;
+  background-color: #f4faff;
   padding: 0 30px;
   color: white;
   box-shadow: black 3px 3px 0 1px;
@@ -62,20 +89,8 @@ body {
   transform: translate(2px, 2px);
 }
 
-.card2 {
-  background: #D81E5B;
-  text-decoration: none;
-  color: black;
-  border: black solid 4px;
-  border-radius: 5px;
-  flex-direction: column;
-  box-shadow: black 3px 3px 0 1px;
-  width: 50%;
-  margin: 100px 200px;
-}
-
 .cb3 {
-  background-color: #eaeadf;
+  background-color: #f4faff;
   padding: 0 30px;
   color: white;
   box-shadow: black 3px 3px 0 1px;
@@ -92,18 +107,29 @@ body {
   transform: translate(2px, 2px);
 }
 
-.card3 {
-  background: var(---one-blue-color);
+/* CARDS  */
+
+.card-container{
+  display: grid;
+  gap: var(--space-1-5);
+}
+
+.card {
   text-decoration: none;
   color: black;
   border: black solid 4px;
   border-radius: 5px;
-  flex-direction: column;
   box-shadow: black 3px 3px 0 1px;
-  width: 50%;
-  margin: 100px 200px;
 }
 
-.material-icons{
-  color:black;
+.card-blue {
+  background-color: var(---one-blue-color);
+}
+
+.card-purple {
+  background-color: var(---one-purple-color);
+}
+
+.material-icons {
+  color: black;
 }
