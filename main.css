@@ -1,10 +1,11 @@
 :root {
   ---one-purple-color: #d81e5b;
   ---one-balck-color: #231f20;
-  ---one-white-color: #f4faff;
+  ---one-white-grey-color: #f4faff;
+  ---one-white-color: #ffffff;
   ---one-blue-color: #279af1;
   ---one-black-2-color: #2c2c38;
-  ---one-black-3-color: #151c2c;
+  ---one-black-dark-color: #000000;
 
   --font-size-300: 0.975rem;
   --font-size-400: 1.125rem;
@@ -26,16 +27,14 @@
   box-sizing: border-box;
 }
 
-
-/* Remove default margin */
+/* Remove Default Margin */
 * {
   padding: 0;
   margin: 0;
   font-family: "DM Mono", monospace;
 }
 
-
-/* Set core root defaults */
+/* Set Core Root Defaults */
 html:focus-within {
   scroll-behavior: smooth;
 }
@@ -46,70 +45,53 @@ body {
   place-items: center;
 }
 
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
+/* PAGE TEMPLATES */
+.main-page-template {
+  display: grid;
 }
 
-.cb {
-  background-color: rgb(34, 130, 185);
-  padding: 10px 40px;
-  color: #fff;
-  box-shadow: black 3px 3px 0 1px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-  border: 2px solid black;
-  margin: 150px;
+.blog-page-template {
+  display: grid;
 }
 
-.cb:not([disabled]):active {
-  box-shadow: black 1px 1px 0 0;
-  transform: translate(2px, 2px);
+.article-page-template {
+  display: grid;
 }
 
-.cb2 {
-  background-color: #f4faff;
+/* NAV */
+.nav-container {
+  display: grid;
+}
+
+/* BUTTON */
+.button {
   padding: 0 30px;
-  color: white;
   box-shadow: black 3px 3px 0 1px;
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
   border: 2px solid black;
-  margin-left: 230px;
   margin-bottom: 20px;
 }
 
-.cb2:not([disabled]):active {
+.button:not([disabled]):active {
   box-shadow: black 1px 1px 0 0;
   transform: translate(2px, 2px);
 }
 
-.cb3 {
-  background-color: #f4faff;
-  padding: 0 30px;
-  color: white;
-  box-shadow: black 3px 3px 0 1px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-  border: 2px solid black;
-  margin-left: 230px;
-  margin-bottom: 20px;
+.button-white {
+  background-color: var(---one-white-color);
+  color: var(---one-black-dark-color);
 }
 
-.cb3:not([disabled]):active {
-  box-shadow: black 1px 1px 0 0;
-  transform: translate(2px, 2px);
+.button-blue {
+  background-color: var(---one-blue-color);
+  font-size: var(--font-size-300);
+  color: (---one-black-dark-color);
 }
 
 /* CARDS  */
-
-.card-container{
+.card-container {
   display: grid;
   gap: var(--space-1-5);
 }
