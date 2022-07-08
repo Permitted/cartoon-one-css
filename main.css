@@ -1,23 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Finlandica:wght@400;500;600;700&display=swap");
+
 :root {
-  ---one-purple-color: #d81e5b;
-  ---one-balck-color: #231f20;
-  ---one-white-grey-color: #f4faff;
-  ---one-white-color: #ffffff;
-  ---one-blue-color: #279af1;
-  ---one-black-2-color: #2c2c38;
-  ---one-black-dark-color: #000000;
+  ---clr-purple: hsl(340, 76%, 48%);
+  ---clr-black: #000000;
+  ---clr-black-200: hsl(240, 12%, 20%);
+  ---clr-balck-300: hsl(345, 6%, 13%);
+  ---clr-white: hsl(0, 0%, 100%);
+  ---clr-white-200: hsl(207, 100%, 98%);
+  ---clr-blue: hsl(206, 88%, 55%);
 
-  --font-size-300: 0.975rem;
-  --font-size-400: 1.125rem;
-  --font-size-500: 1.25rem;
-  --font-size-600: 1.75rem;
-  --font-size-700: 3rem;
+  --ff-primary: "Finlandica", sans-serif;
 
-  --space-1: 1rem;
-  --space-1-5: 1.5rem;
-  --space-2: 2rem;
-  --space-3: 3rem;
-  --space-4: 4rem;
+  --fs-300: 0.975rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.75rem;
+  --fs-700: 3rem;
+
+  --spc-1: 1rem;
+  --spc-2: 2rem;
+  --spc-3: 3rem;
+  --spc-4: 4rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
 }
 
 /* Box-Sizing */
@@ -31,7 +39,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "DM Mono", monospace;
+  font-family: var(--ff-primary);
 }
 
 /* Set Core Root Defaults */
@@ -39,15 +47,103 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+html,
 body {
-  background-color: var(---one-black-2-color);
-  display: grid;
-  place-items: center;
+  height: 100%;
 }
 
-/* PAGE TEMPLATES */
+/* Set Core Body */
+body {
+  background-color: var(---clr-black-200);
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Image Reset */
+img,
+picture,
+svg {
+  display: block;
+}
+
+/* Link Reset */
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: var(---clr-white);
+  font-weight: bold;
+}
+/* --- Utility Classes --- */
+
+/* Background Color */
+.bg-clr-black {
+  background-color: var(---clr-black);
+}
+
+.bg-clr-white {
+  background-color: var(---clr-white);
+}
+
+.bg-clr-purple {
+  background-color: var(---clr-purple);
+}
+
+.bg-clr-blue {
+  background-color: var(---clr-blue);
+}
+
+/* Text Color */
+.text-color-black {
+  color: var(---clr-black);
+}
+
+.text-color-white {
+  color: var(---clr-white);
+}
+
+.text-color-white-200 {
+  color: var(---clr-white-200);
+}
+
+.text-color-blue {
+  color: var(---clr-blue);
+}
+
+.text-color-purple {
+  color: var(---clr-purple);
+}
+
+/* Font Weight */
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.material-icons {
+  color: var(---clr-black);
+}
+/* --- Utility Classes End --- */
+
+/* --- Page Templates --- */
 .main-page-template {
   display: grid;
+  grid-template-areas:
+    "nav    nav    nav    nav"
+    "about  about  info   info"
+    "footer footer footer footer";
 }
 
 .blog-page-template {
@@ -58,60 +154,70 @@ body {
   display: grid;
 }
 
-/* NAV */
-.nav-container {
-  display: grid;
+/* --- Nav --- */
+.nav {
+  grid-area: nav;
 }
 
-/* BUTTON */
+.nav-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "logo element";
+}
+
+.nav-logo {
+  grid-area: logo;
+  justify-self: left;
+  align-self: center;
+}
+
+.nav-element {
+  grid-area: element;
+  justify-self: right;
+  align-self: center;
+}
+/* --- Nav End --- */
+
+/* --- Button --- */
 .button {
-  padding: 0 30px;
-  box-shadow: black 3px 3px 0 1px;
+  box-shadow: var(---clr-black) 3px 3px 0 1px;
   cursor: pointer;
   border-radius: 5px;
-  font-weight: bold;
-  border: 2px solid black;
-  margin-bottom: 20px;
+  border: 2px solid var(---clr-black);
+  width: 90px;
+  min-width: 90px;
+  min-height: 20px;  
 }
 
 .button:not([disabled]):active {
-  box-shadow: black 1px 1px 0 0;
+  box-shadow: var(---clr-black) 1px 1px 0 0;
   transform: translate(2px, 2px);
 }
+/* --- Button End --- */
 
-.button-white {
-  background-color: var(---one-white-color);
-  color: var(---one-black-dark-color);
-}
-
-.button-blue {
-  background-color: var(---one-blue-color);
-  font-size: var(--font-size-300);
-  color: (---one-black-dark-color);
-}
-
-/* CARDS  */
+/* --- Card --- */
 .card-container {
   display: grid;
-  gap: var(--space-1-5);
+  gap: var(--fs-300);
 }
 
 .card {
+  display: grid;
   text-decoration: none;
-  color: black;
-  border: black solid 4px;
+  color: var(---clr-black);
+  border: var(---clr-black) solid 4px;
   border-radius: 5px;
-  box-shadow: black 3px 3px 0 1px;
+  box-shadow: var(---clr-black) 3px 3px 0 1px;
 }
 
-.card-blue {
-  background-color: var(---one-blue-color);
+.card-header {
+  justify-self: left;
+  align-self: center;
 }
 
-.card-purple {
-  background-color: var(---one-purple-color);
+.card-summary {
+  justify-self: left;
+  align-self: center;
+  color: var(---clr-white-200);
 }
-
-.material-icons {
-  color: black;
-}
+/* --- Card End--- */
